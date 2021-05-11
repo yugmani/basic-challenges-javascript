@@ -1,0 +1,18 @@
+body {
+  background: orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: lightyellow;
+  width: 60%;
+  height: 60vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
