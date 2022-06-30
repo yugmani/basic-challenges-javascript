@@ -358,25 +358,23 @@ function myFunction(num) {
 
 //14. Convert a string into CamelCase
 function camelizeString(str) {
+  let arr = str.split(' ');
 
-    let arr = str.split(' ');
-
-    let camelCase = '';
-    arr.forEach((item, index) => {
-      if (isNaN(item.slice(0, 1)) && !containsSpecialChars(item.slice(0,1))) {
-        if (index === 0) camelCase += item.toLowerCase();
-        if (index > 0) {
-          camelCase += item.slice(0, 1).toUpperCase();
-          camelCase += item.slice(1).toLowerCase();
-        }
-      } else {
-        camelCase = 'Not valid string';
-        arr.length = index;
+  let camelCase = '';
+  arr.forEach((item, index) => {
+    if (isNaN(item.slice(0, 1)) && !containsSpecialChars(item.slice(0, 1))) {
+      if (index === 0) camelCase += item.toLowerCase();
+      if (index > 0) {
+        camelCase += item.slice(0, 1).toUpperCase();
+        camelCase += item.slice(1).toLowerCase();
       }
-    });
+    } else {
+      camelCase = 'Not valid string';
+      arr.length = index;
+    }
+  });
 
-    return camelCase;
-
+  return camelCase;
 }
 
 //testing if a string contains a special character
@@ -392,4 +390,19 @@ console.log(camelizeString('lskdj 123as')); //Not valid string
 console.log(camelizeString('laxmi #$%^&@')); //Not valid string
 console.log(camelizeString('John &Torres')); //Not valid string
 
+//NESTED TERNARY operators
+// *****************************************
 
+// function to test whether a number is odd
+function isOddNumber(num) {
+  if (num % 2 === 1) return 'yes';
+  else return 'no';
+}
+
+//Refactor a function isOddNumber(num) using ternary operators
+function isOddNum(num) {
+  return num % 2 === 1 ? 'yes' : 'no';
+}
+
+console.log(isOddNum(17)); //yes
+console.log(isOddNum(84)); //no
