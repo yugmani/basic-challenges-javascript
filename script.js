@@ -150,7 +150,9 @@ function nextDivisibleNumber(x, y) {
 //Author's Code
 function charCodeNext(str) {
   const arr = [...str];
-  const correctedArray = arr.map(e => String.fromCharCode(e.charCodeAt() + 1));
+  const correctedArray = arr.map((e) =>
+    String.fromCharCode(e.charCodeAt() + 1)
+  );
   return correctedArray.join('');
 }
 
@@ -185,12 +187,12 @@ console.log(charCodeNext('sdrshmf')); //xpected 'testing'
 function myChaosFunction(str1, str2) {
   const first = str1
     .split('')
-    .map(item => item.replace('%', ''))
+    .map((item) => item.replace('%', ''))
     .join('');
   const second = str2
     .split('')
     .reverse()
-    .map(item => item.replace('%', ''))
+    .map((item) => item.replace('%', ''))
     .join('');
   return first.charAt(0).toUpperCase() + first.slice(1) + second;
 }
@@ -209,7 +211,7 @@ function myChaosFunction(str1, str2) {
 function mySplitFunction(num) {
   let str = num.toString(); //alternatively const str = num + '';
   let arr = str.split('');
-  let newArr = arr.map(item => Number(item));
+  let newArr = arr.map((item) => Number(item));
   return newArr;
 }
 
@@ -253,7 +255,7 @@ function myPercentFunction({ number, percentage }) {
 //My Code
 function charCountFunction(a, b) {
   const str = b.split('');
-  return str.filter(item => item.toLowerCase() === a).length;
+  return str.filter((item) => item.toLowerCase() === a).length;
 }
 
 //Author's Code
@@ -353,3 +355,23 @@ function myFunction(num) {
 // console.log(myFunction(3.136));  //Expected  3.14
 // console.log(myFunction(1.12397));  //Expected  1.12
 // console.log(myFunction(26.1379));  //Expected  26.14
+
+//14. Convert a string into CamelCase
+function camelizeString(str) {
+  let arr = str.split(' ');
+
+  let camelCase = '';
+  arr.forEach((item, index) => {
+    if (index === 0) camelCase += item.toLowerCase();
+    if (index > 0) {
+      camelCase += item.slice(0, 1).toUpperCase();
+      camelCase += item.slice(1).toLowerCase();
+    }
+  });
+
+  return camelCase;
+  // return arr.join('');
+}
+
+console.log(camelizeString('My Name'));
+console.log(camelizeString('Yoog Mani Gurung'));
