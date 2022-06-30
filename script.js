@@ -362,16 +362,26 @@ function camelizeString(str) {
 
   let camelCase = '';
   arr.forEach((item, index) => {
-    if (index === 0) camelCase += item.toLowerCase();
-    if (index > 0) {
-      camelCase += item.slice(0, 1).toUpperCase();
-      camelCase += item.slice(1).toLowerCase();
+    if (isNaN(item.slice(0, 1))) {
+      if (index === 0) camelCase += item.toLowerCase();
+      if (index > 0) {
+        camelCase += item.slice(0, 1).toUpperCase();
+        camelCase += item.slice(1).toLowerCase();
+      }
+    } else {
+      camelCase = 'Not valid string';
+      arr.length = index;
     }
   });
 
   return camelCase;
-  // return arr.join('');
 }
 
 console.log(camelizeString('My Name'));
 console.log(camelizeString('Yoog Mani Gurung'));
+console.log(camelizeString('1234 lskdjfa'));
+console.log(camelizeString('lskdj 123as'));
+console.log(camelizeString("laxmi #$%^&#@"));
+
+//is Number
+
