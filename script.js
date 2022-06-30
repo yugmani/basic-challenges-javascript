@@ -406,3 +406,57 @@ function isOddNum(num) {
 
 console.log(isOddNum(17)); //yes
 console.log(isOddNum(84)); //no
+
+// a function with conditional statements
+function numToWord(num) {
+  if (num === 1) return 'First';
+  else if (num === 2) return (word = 'Second');
+  else if (num === 3) return (word = 'Third');
+  else return (word = 'No Ranking');
+}
+
+console.log(numToWord(1)); //First
+console.log(numToWord(5)); //No Ranking
+
+// Rewriting numToWord(num) function using switch Cases
+
+function switchToWord(num) {
+  let word;
+  switch (num) {
+    case 1:
+      word = 'First';
+      break;
+    case 2:
+      word = 'Second';
+      break;
+    case 3:
+      word = 'Third';
+      break;
+    default:
+      word = 'No Ranking';
+      break;
+  }
+
+  return word;
+}
+
+console.log(switchToWord(2)); //Second
+console.log(switchToWord(31)); //No Ranking
+
+// Rewriting switchToWord(num) function using ternary operators
+
+function numTernaryWord(num) {
+  let word =
+    num === 1
+      ? 'First'
+      : num === 2
+      ? 'Second'
+      : num === 3
+      ? 'Third'
+      : 'No Ranking';
+
+  return word;
+}
+
+console.log(numTernaryWord(3)); //Third
+console.log(numTernaryWord(53)); //No Ranking
