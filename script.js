@@ -358,30 +358,38 @@ function myFunction(num) {
 
 //14. Convert a string into CamelCase
 function camelizeString(str) {
-  let arr = str.split(' ');
 
-  let camelCase = '';
-  arr.forEach((item, index) => {
-    if (isNaN(item.slice(0, 1))) {
-      if (index === 0) camelCase += item.toLowerCase();
-      if (index > 0) {
-        camelCase += item.slice(0, 1).toUpperCase();
-        camelCase += item.slice(1).toLowerCase();
+    let arr = str.split(' ');
+
+    let camelCase = '';
+    arr.forEach((item, index) => {
+      if (isNaN(item.slice(0, 1)) && !containsSpecialChars(item.slice(0,1))) {
+        if (index === 0) camelCase += item.toLowerCase();
+        if (index > 0) {
+          camelCase += item.slice(0, 1).toUpperCase();
+          camelCase += item.slice(1).toLowerCase();
+        }
+      } else {
+        camelCase = 'Not valid string';
+        arr.length = index;
       }
-    } else {
-      camelCase = 'Not valid string';
-      arr.length = index;
-    }
-  });
+    });
 
-  return camelCase;
+    return camelCase;
+
 }
 
-console.log(camelizeString('My Name'));
-console.log(camelizeString('Yoog Mani Gurung'));
-console.log(camelizeString('1234 lskdjfa'));
-console.log(camelizeString('lskdj 123as'));
-console.log(camelizeString("laxmi #$%^&#@"));
+//testing if a string contains a special character
+function containsSpecialChars(str) {
+  const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+  return specialChars.test(str);
+}
 
-//is Number
+console.log(camelizeString('My Name')); //myName
+console.log(camelizeString('Camel Case String')); //camelCaseString
+console.log(camelizeString('1234 lskdjfa')); //Not valid string
+console.log(camelizeString('lskdj 123as')); //Not valid string
+console.log(camelizeString('laxmi #$%^&@')); //Not valid string
+console.log(camelizeString('John &Torres')); //Not valid string
+
 
