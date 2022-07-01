@@ -460,3 +460,25 @@ function numTernaryWord(num) {
 
 console.log(numTernaryWord(3)); //Third
 console.log(numTernaryWord(53)); //No Ranking
+
+// How to sort an Object Array by Date in Javascript
+// ****************************************************
+
+const events = [
+  { name: 'Birthday', date: new Date('2022-04-23') },
+  { name: 'Shopping', date: new Date('2022-04-17') },
+  { name: 'Meeting', date: new Date('2022-04-27') },
+];
+
+//sorting without mutating
+const sortedEvents = events.slice().sort((a, b)=>a.date - b.date);
+console.log(sortedEvents);
+
+//Sorting that Mutates the given array
+//sorting in ascending order
+events.sort((a, b) => a.date.getTime() - b.date.getTime());
+console.log(events);
+
+//sorting in descending order
+events.sort((a, b) => b.date.getTime() - a.date.getTime());
+console.log(events);
