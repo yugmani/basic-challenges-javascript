@@ -471,14 +471,43 @@ const events = [
 ];
 
 //sorting without mutating
-const sortedEvents = events.slice().sort((a, b)=>a.date - b.date);
-console.log(sortedEvents);
+const sortedEvents = events.slice().sort((a, b) => a.date - b.date);
+console.log('Sorted: ', sortedEvents);
 
 //Sorting that Mutates the given array
 //sorting in ascending order
 events.sort((a, b) => a.date.getTime() - b.date.getTime());
-console.log(events);
+console.log('Ascending order: ', events);
 
 //sorting in descending order
 events.sort((a, b) => b.date.getTime() - a.date.getTime());
-console.log(events);
+console.log('Descending Order: ', events);
+
+// Sorting an Array Object by a property
+// **************************************
+
+const items = [
+  { id: 2, title: 'title1', pId: 62 },
+  { id: 1, title: 'title2', pId: 43 },
+  { id: 4, title: 'title3', pId: 74 },
+  { id: 9, title: 'title4', pId: 35 },
+  { id: 5, title: 'title5', pId: 81 },
+];
+
+function sortByProperty(property) {
+  return function (a, b) {
+    if (a[property] > b[property]) return 1;
+    else if (a[property] < b[property]) return -1;
+    return 0;
+  };
+}
+
+items.sort(sortByProperty('pId'));
+console.log('sorted by pId: ', items);
+
+items.sort(sortByProperty('title'));
+console.log('sorted by title: ', items);
+
+items.sort(sortByProperty('id'));
+console.log('sorted by id: ', items);
+
