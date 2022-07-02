@@ -518,3 +518,12 @@ function numberOfWords(str) {
 }
 
 // console.log(numberOfWords('I live in   Los Angeles.')); //5
+
+//Count the letters in a string
+function countCharacters(str) {
+  const strArray = str.split('');
+  return strArray.filter((letter) => letter !== ' ').length;
+}
+
+// console.log(countCharacters('I live in   Los Angeles.')); //18
+// console.log(countCharacters("!@# $%^&*")); //8
