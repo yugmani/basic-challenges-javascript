@@ -508,3 +508,13 @@ items.sort(sortByProperty('title'));
 
 items.sort(sortByProperty('id'));
 // console.log('sorted by id: ', items);
+
+// Count the words in a String
+// ********************************
+
+function numberOfWords(str) {
+  const strArray = str.split(' ');
+  return strArray.filter((word) => word !== '').length;
+}
+
+// console.log(numberOfWords('I live in   Los Angeles.')); //5
