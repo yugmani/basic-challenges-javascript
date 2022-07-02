@@ -157,9 +157,9 @@ function charCodeNext(str) {
 }
 
 // Test Cases:
-console.log(charCodeNext('bnchmf')); //Expected  'coding'
-console.log(charCodeNext('bgddrd')); //Expected  'cheese'
-console.log(charCodeNext('sdrshmf')); //xpected 'testing'
+// console.log(charCodeNext('bnchmf')); //Expected  'coding'
+// console.log(charCodeNext('bgddrd')); //Expected  'cheese'
+// console.log(charCodeNext('sdrshmf')); //Expected 'testing'
 
 // ***********************************************************
 //8.Clear up the chaos behind these strings
@@ -197,9 +197,9 @@ function myChaosFunction(str1, str2) {
   return first.charAt(0).toUpperCase() + first.slice(1) + second;
 }
 
-// console.log(myChaosFunction('java', 'tpi%rcs'));
-// console.log(myChaosFunction('c%ountry', 'edis'));
-// console.log(myChaosFunction('down', 'nw%ot'));
+// console.log("Chaos: ", myChaosFunction('java', 'tpi%rcs')); //Chaos:Javascript
+// console.log(myChaosFunction('c%ountry', 'edis')); //Countryside
+// console.log(myChaosFunction('down', 'nw%ot'));  //Dwontown
 
 // ***********************************************************
 //9.Split a number into its digits
@@ -239,11 +239,9 @@ function myPercentFunction({ number, percentage }) {
   return percent;
 }
 
-// console.log(myPercentFunction({ number: 100, percentage: 50 }));
-// // Expected 50
-// console.log(myPercentFunction({ number: 777, percentage: 2 }));
-// //Expected 15.54
-// console.log(myPercentFunction({ number: 500, percentage: 99 }));
+// console.log(myPercentFunction({ number: 100, percentage: 50 }));  // Expected 50
+// console.log(myPercentFunction({ number: 777, percentage: 2 })); //Expected 15.54
+// console.log("Percentage: ", myPercentFunction({ number: 500, percentage: 99 }));  //Percentage: 495
 
 // ***********************************************************
 // 11. How many times does a character occur?
@@ -383,12 +381,12 @@ function containsSpecialChars(str) {
   return specialChars.test(str);
 }
 
-console.log(camelizeString('My Name')); //myName
-console.log(camelizeString('Camel Case String')); //camelCaseString
-console.log(camelizeString('1234 lskdjfa')); //Not valid string
-console.log(camelizeString('lskdj 123as')); //Not valid string
-console.log(camelizeString('laxmi #$%^&@')); //Not valid string
-console.log(camelizeString('John &Torres')); //Not valid string
+// console.log(camelizeString('My Name')); //myName
+// console.log(camelizeString('Camel Case String')); //camelCaseString
+// console.log(camelizeString('1234 lskdjfa')); //Not valid string
+// console.log(camelizeString('lskdj 123as')); //Not valid string
+// console.log(camelizeString('laxmi #$%^&@')); //Not valid string
+// console.log(camelizeString('John &Torres')); //Not valid string
 
 //NESTED TERNARY operators
 // *****************************************
@@ -404,8 +402,8 @@ function isOddNum(num) {
   return num % 2 === 1 ? 'yes' : 'no';
 }
 
-console.log(isOddNum(17)); //yes
-console.log(isOddNum(84)); //no
+// console.log(isOddNum(17)); //yes
+// console.log(isOddNum(84)); //no
 
 // a function with conditional statements
 function numToWord(num) {
@@ -415,8 +413,8 @@ function numToWord(num) {
   else return (word = 'No Ranking');
 }
 
-console.log(numToWord(1)); //First
-console.log(numToWord(5)); //No Ranking
+// console.log(numToWord(1)); //First
+// console.log(numToWord(5)); //No Ranking
 
 // Rewriting numToWord(num) function using switch Cases
 
@@ -440,8 +438,8 @@ function switchToWord(num) {
   return word;
 }
 
-console.log(switchToWord(2)); //Second
-console.log(switchToWord(31)); //No Ranking
+// console.log(switchToWord(2)); //Second
+// console.log(switchToWord(31)); //No Ranking
 
 // Rewriting switchToWord(num) function using ternary operators
 
@@ -458,8 +456,8 @@ function numTernaryWord(num) {
   return word;
 }
 
-console.log(numTernaryWord(3)); //Third
-console.log(numTernaryWord(53)); //No Ranking
+// console.log(numTernaryWord(3)); //Third
+// console.log(numTernaryWord(53)); //No Ranking
 
 // How to sort an Object Array by Date in Javascript
 // ****************************************************
@@ -472,16 +470,16 @@ const events = [
 
 //sorting without mutating
 const sortedEvents = events.slice().sort((a, b) => a.date - b.date);
-console.log('Sorted: ', sortedEvents);
+// console.log('Sorted: ', sortedEvents);
 
 //Sorting that Mutates the given array
 //sorting in ascending order
 events.sort((a, b) => a.date.getTime() - b.date.getTime());
-console.log('Ascending order: ', events);
+// console.log('Ascending order: ', events);
 
 //sorting in descending order
 events.sort((a, b) => b.date.getTime() - a.date.getTime());
-console.log('Descending Order: ', events);
+// console.log('Descending Order: ', events);
 
 // Sorting an Array Object by a property
 // **************************************
@@ -503,11 +501,10 @@ function sortByProperty(property) {
 }
 
 items.sort(sortByProperty('pId'));
-console.log('sorted by pId: ', items);
+// console.log('sorted by pId: ', items);
 
 items.sort(sortByProperty('title'));
-console.log('sorted by title: ', items);
+// console.log('sorted by title: ', items);
 
 items.sort(sortByProperty('id'));
-console.log('sorted by id: ', items);
-
+// console.log('sorted by id: ', items);

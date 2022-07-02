@@ -4,7 +4,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: auto;
 }
 
 .container {
@@ -15,6 +15,17 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+
+.script-container {
+  background-color: lightyellow;
+  width: 90%;
+  height: auto;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
 }
 
