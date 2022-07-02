@@ -60,10 +60,11 @@ body {
 .grid-container {
   text-align: center;
   width: 80%;
+  height: 300px;
   background-color: lightpink;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: auto;
+  grid-template-rows: 1fr 3fr;
   gap: 5px;
   /* padding: 10px; */
   border: 1px solid blue;
@@ -88,6 +89,7 @@ body {
 }
 
 .grid-item-5 {
+  /* grid-row-start: 2/span 2; */
   grid-column-start: span 3;
   background-color: azure;
 }
